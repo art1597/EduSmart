@@ -38,6 +38,13 @@ Route::group(['middleware'=>['web','checkadmin']],function(){
     //subject routes
     Route::post('/add-subject',[AdminController::class,'addSubject'])->name('addSubject');
 
+    //edit routes
+     Route::post('/edit-subject',[AdminController::class,'editSubject'])->name('editSubject');
+
+      //delete routes
+      Route::post('/delete-subject',[AdminController::class,'deleteSubject'])->name('deleteSubject');
+
+
 });
 Route::group(['middleware'=>['web','checkStudent']],function(){
     Route::get('/dashboard',[AuthController::class,'loadDashboard']);
